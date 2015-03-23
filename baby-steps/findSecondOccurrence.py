@@ -8,10 +8,6 @@ def find_second(target, search):
     second = target.find(search, target.find(search) + 1)
     return second
 
-
-
-
-
 danton = "De l'audace, encore de l'audace, toujours de l'audace"
 print find_second(danton, 'audace')
 #>>> 25
