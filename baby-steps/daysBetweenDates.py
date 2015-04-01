@@ -7,13 +7,17 @@
 # time travel). 
 #
 
+def daysInMonth(year, month):
+  return 30
+
+
 def nextDay(year, month, day):
     """
     Returns the year, month, day of the next day.
     Simple version: assume every month has 30 days.
     """
     # YOUR CODE HERE
-    if day < 30:
+    if day < daysInMonth(year, month):
       return year, month, day+1
     else:
       if month < 12:
@@ -26,9 +30,10 @@ def nextDay(year, month, day):
 def daysBetweenDates(year1, month1, day1, year2, month2, day2):
   """Returns the number of days between year1/month1/day1
        and year2/month2/day2. Assumes inputs are valid dates
-       in Gregorian calendar, and the first date is not after
-       the second."""
+       in Gregorian calendar."""
   # program defensively! Add an assertion if the input is not valid!
+  # ensure second date is not before the first date
+  # equal dates should not raise assertionerror
   assert not dateIsBefore(year2, month2, day2, year1, month1, day1)
   days = 0
   while dateIsBefore(year1,month1,day1,year2,month2,day2):
@@ -40,6 +45,7 @@ def daysBetweenDates(year1, month1, day1, year2, month2, day2):
   return days
 
 def dateIsBefore(year1, month1, day1, year2, month2, day2):
+  """Returns True if year1-month1-day1 is before year2-month2-day2. Otherwise, returns False."""
   if year1 < year2:
     #print year1," less than ",year2
     return True
