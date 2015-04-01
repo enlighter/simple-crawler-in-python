@@ -9,8 +9,6 @@
 
 def isLeapYear(year):
   return (year % 4 == 0 and ( year % 100 != 0 or year % 400 == 0 ) )
-  #  return True
-  #return False
 
 def daysInMonth(year, month):
   """ Returns the no. of days in a given month in a given year """
@@ -44,7 +42,6 @@ def nextDay(year, month, day):
     """
     Returns the year, month, day of the next day.
     """
-    # YOUR CODE HERE
     if day < daysInMonth(year, month):
       return year, month, day+1
     else:
@@ -67,8 +64,6 @@ def daysBetweenDates(year1, month1, day1, year2, month2, day2):
   while dateIsBefore(year1,month1,day1,year2,month2,day2):
     year1, month1, day1 = nextDay(year1,month1,day1)
     days += 1
-    #print year1
-    #print days
 
   return days
 
@@ -86,7 +81,6 @@ def dateIsBefore(year1, month1, day1, year2, month2, day2):
   return False
 
 # Test routine
-
 def test():
     test_cases = [((2012,1,1,2012,2,28), 58), 
                   ((2012,1,1,2012,3,1), 60),
