@@ -7,7 +7,13 @@
 # time travel). 
 #
 
+def isLeapYear(year):
+  if (year % 4 == 0 and ( year % 100 != 0 or year % 400 == 0 ) ):
+    return True
+  return False
+
 def daysInMonth(year, month):
+  """ Returns the no. of days in a given month in a given year """
   ## jan, feb, mar, apr, may, jun, july, august, september, october, november, december ##
   ## 01    02   03    04  05    06  07    08      09        10          11      12      ##
   ##  31    28   31   30  31    30  31    31      30        31          30      31      ##
@@ -23,6 +29,10 @@ def daysInMonth(year, month):
              10 : 31,
              11 : 30,
              12 : 31 }
+
+  if isLeapYear(year):
+    months[2] = 29
+
   return months[month]
 
 #print daysInMonth(2015, 1)
@@ -33,7 +43,6 @@ def daysInMonth(year, month):
 def nextDay(year, month, day):
     """
     Returns the year, month, day of the next day.
-    Simple version: assume every month has 30 days.
     """
     # YOUR CODE HERE
     if day < daysInMonth(year, month):
