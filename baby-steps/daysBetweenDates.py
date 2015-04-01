@@ -8,8 +8,27 @@
 #
 
 def daysInMonth(year, month):
-  return 30
+  ## jan, feb, mar, apr, may, jun, july, august, september, october, november, december ##
+  ## 01    02   03    04  05    06  07    08      09        10          11      12      ##
+  ##  31    28   31   30  31    30  31    31      30        31          30      31      ##
+  months = { 1 : 31,
+             2 : 28,
+             3 : 31,
+             4 : 30,
+             5 : 31,
+             6 : 30,
+             7 : 31,
+             8 : 31,
+             9 : 30,
+             10 : 31,
+             11 : 30,
+             12 : 31 }
+  return months[month]
 
+#print daysInMonth(2015, 1)
+#print daysInMonth(2015, 6)
+#print daysInMonth(2015, 2)
+#print daysInMonth(2015, 11)
 
 def nextDay(year, month, day):
     """
