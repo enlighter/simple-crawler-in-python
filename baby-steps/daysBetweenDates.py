@@ -8,9 +8,9 @@
 #
 
 def isLeapYear(year):
-  if (year % 4 == 0 and ( year % 100 != 0 or year % 400 == 0 ) ):
-    return True
-  return False
+  return (year % 4 == 0 and ( year % 100 != 0 or year % 400 == 0 ) )
+  #  return True
+  #return False
 
 def daysInMonth(year, month):
   """ Returns the no. of days in a given month in a given year """
