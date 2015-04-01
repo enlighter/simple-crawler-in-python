@@ -28,6 +28,8 @@ def daysBetweenDates(year1, month1, day1, year2, month2, day2):
        and year2/month2/day2. Assumes inputs are valid dates
        in Gregorian calendar, and the first date is not after
        the second."""
+  # program defensively! Add an assertion if the input is not valid!
+  assert dateIsBefore(year1, month1, day1, year2, month2, day2)
   days = 0
   while dateIsBefore(year1,month1,day1,year2,month2,day2):
     year1, month1, day1 = nextDay(year1,month1,day1)
@@ -56,13 +58,20 @@ def test():
                   ((2012,1,1,2012,3,1), 60),
                   ((2011,6,30,2012,6,30), 366),
                   ((2011,1,1,2012,8,8), 585 ),
-                  ((1900,1,1,1999,12,31), 36523)]
+                  ((1900,1,1,1999,12,31), 36523),
+                  ((2013,1,1,1999,12,31), "AssertionError")]
     for (args, answer) in test_cases:
+      try:
         result = daysBetweenDates(*args)
         if result != answer:
             print "Test with data:", args, "failed"
         else:
             print "Test case passed!"
+      except AssertionError:
+        if answer == "AssertionError":
+          print "Nice job! Test case {0} correctly raises AssertionError!\n".format(args)
+        else:
+          print "Check your work! Test case {0} should not raise AssertionError!\n".format(args)
 
 test()
 #print daysBetweenDates(1900,1,1,1999,12,31)
