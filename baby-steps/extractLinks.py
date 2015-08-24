@@ -29,3 +29,23 @@ def print_all_links (page):
 			page = page[endpos:]
 		else:
 			break
+
+def get_all_links (page):
+    links = []
+
+    while page != '':
+        url, endpos = get_next_target(page)
+        if url:
+            links.append(url)
+            page = page[endpos:]
+        else:
+            break
+
+    return links
+
+import requests
+
+url = "https://blockchain.info/address/174SZnzUzUa6sRWCCEjqVJTDAK83efXRa9"
+response = requests.get(url)
+links = get_all_links(response.content)
+print links
