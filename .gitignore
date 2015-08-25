@@ -5,6 +5,9 @@ __pycache__/
 # C extensions
 #*.so
 
+# IDLE folder
+.idea/
+
 # Distribution / packaging
 .Python
 env/
