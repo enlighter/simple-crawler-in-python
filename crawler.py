@@ -17,6 +17,9 @@ def crawl_web(seed_page):
 
     while tocrawl:
         dest = tocrawl.pop(0)
+        # popping from the end (tocrawl.pop() or tocrawl.pop(-1) )
+        # implements DFS
+        # here we're going for a BFS implementation
         dest = normalize_link(dest)
         # debug:
         #print("Next : tocrawl = ", tocrawl, "\ncrawled = ", crawled)
