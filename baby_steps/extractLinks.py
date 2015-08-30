@@ -43,3 +43,17 @@ def get_all_links (page):
 
     return links
 
+def get_new_links (page):
+# modified version of get_all_links
+# method for crawler implentation
+    links = []
+
+    while page != '':
+        url, endpos = get_next_target(page)
+        if url:
+            links.append(url)
+            page = page[endpos:]
+        else:
+            break
+
+    return links

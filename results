@@ -1,0 +1,55 @@
+Initialized : tocrawl =  ['https://www.udacity.com/cs101x/index.html'] 
+crawled =  [] 
+
+
+Next : tocrawl =  [] 
+crawled =  []
+Will we process  http://www.udacity.com/cs101x/index.html  :  True 
+
+
+Next : tocrawl =  ['http://www.udacity.com/cs101x/crawling.html', 'http://www.udacity.com/cs101x/walking.html', 'http://www.udacity.com/cs101x/flying.html'] 
+crawled =  ['http://www.udacity.com/cs101x/index.html'] 
+
+
+Next : tocrawl =  ['http://www.udacity.com/cs101x/walking.html', 'http://www.udacity.com/cs101x/flying.html'] 
+crawled =  ['http://www.udacity.com/cs101x/index.html']
+Will we process  http://www.udacity.com/cs101x/crawling.html  :  True 
+
+
+Next : tocrawl =  ['http://www.udacity.com/cs101x/walking.html', 'http://www.udacity.com/cs101x/flying.html', 'http://www.udacity.com/cs101x/kicking.html'] 
+crawled =  ['http://www.udacity.com/cs101x/index.html', 'http://www.udacity.com/cs101x/crawling.html'] 
+
+
+Next : tocrawl =  ['http://www.udacity.com/cs101x/flying.html', 'http://www.udacity.com/cs101x/kicking.html'] 
+crawled =  ['http://www.udacity.com/cs101x/index.html', 'http://www.udacity.com/cs101x/crawling.html']
+Will we process  http://www.udacity.com/cs101x/walking.html  :  True 
+
+
+Next : tocrawl =  ['http://www.udacity.com/cs101x/flying.html', 'http://www.udacity.com/cs101x/kicking.html', 'http://www.udacity.com/cs101x/index.html'] 
+crawled =  ['http://www.udacity.com/cs101x/index.html', 'http://www.udacity.com/cs101x/crawling.html', 'http://www.udacity.com/cs101x/walking.html'] 
+
+
+Next : tocrawl =  ['http://www.udacity.com/cs101x/kicking.html', 'http://www.udacity.com/cs101x/index.html'] 
+crawled =  ['http://www.udacity.com/cs101x/index.html', 'http://www.udacity.com/cs101x/crawling.html', 'http://www.udacity.com/cs101x/walking.html']
+Will we process  http://www.udacity.com/cs101x/flying.html  :  True 
+
+
+Next : tocrawl =  ['http://www.udacity.com/cs101x/kicking.html', 'http://www.udacity.com/cs101x/index.html'] 
+crawled =  ['http://www.udacity.com/cs101x/index.html', 'http://www.udacity.com/cs101x/crawling.html', 'http://www.udacity.com/cs101x/walking.html', 'http://www.udacity.com/cs101x/flying.html'] 
+
+
+Next : tocrawl =  ['http://www.udacity.com/cs101x/index.html'] 
+crawled =  ['http://www.udacity.com/cs101x/index.html', 'http://www.udacity.com/cs101x/crawling.html', 'http://www.udacity.com/cs101x/walking.html', 'http://www.udacity.com/cs101x/flying.html']
+Will we process  http://www.udacity.com/cs101x/kicking.html  :  True 
+
+
+Next : tocrawl =  ['http://www.udacity.com/cs101x/index.html'] 
+crawled =  ['http://www.udacity.com/cs101x/index.html', 'http://www.udacity.com/cs101x/crawling.html', 'http://www.udacity.com/cs101x/walking.html', 'http://www.udacity.com/cs101x/flying.html', 'http://www.udacity.com/cs101x/kicking.html'] 
+
+
+Next : tocrawl =  [] 
+crawled =  ['http://www.udacity.com/cs101x/index.html', 'http://www.udacity.com/cs101x/crawling.html', 'http://www.udacity.com/cs101x/walking.html', 'http://www.udacity.com/cs101x/flying.html', 'http://www.udacity.com/cs101x/kicking.html']
+Will we process  http://www.udacity.com/cs101x/index.html  :  False 
+
+
+['http://www.udacity.com/cs101x/index.html', 'http://www.udacity.com/cs101x/crawling.html', 'http://www.udacity.com/cs101x/walking.html', 'http://www.udacity.com/cs101x/flying.html', 'http://www.udacity.com/cs101x/kicking.html']

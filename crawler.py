@@ -2,19 +2,36 @@
 from baby_steps.extractLinks import get_all_links
 import requests
 
+
+def normalize_link(link):
+    bare = link.replace("https://", "http://")
+
+    return bare
+
+
 def crawl_web(seed_page):
-    tocrawl = []
+    tocrawl = [seed_page]
     crawled = []
-    tocrawl.append(seed_page)
+    # debug:
+    #print("Initialized : tocrawl = ", tocrawl, "\ncrawled = ", crawled, "\n\n")
 
     while tocrawl:
-        dest = tocrawl.pop()
+        dest = tocrawl.pop(0)
+        dest = normalize_link(dest)
+        # debug:
+        #print("Next : tocrawl = ", tocrawl, "\ncrawled = ", crawled)
+        #print("Will we process ", dest, " : ", (dest not in crawled), "\n\n")
         if dest not in crawled:
             current_page = requests.get(dest)
             links_extracted = get_all_links(current_page.content.decode('UTF-8'))
             tocrawl.extend(links_extracted)
             crawled.append(dest)
+            # debug:
+            #print("Next : tocrawl = ", tocrawl, "\ncrawled = ", crawled, "\n\n")
         else:
             continue
 
     return crawled
+
+### test
+#print(bare_link("https://www.udacity.com/cs101x/kicking.html"))
